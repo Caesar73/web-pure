@@ -2,9 +2,13 @@
 
     var layout   = document.getElementById('layout'),
         menu     = document.getElementById('menu'),
-        menuLink = document.getElementById('menuLink');
+        menuLink = document.getElementById('menuLink'),
+        language = document.getElementById('language');
 
-    var menuLinks = menu.getElementsByTagName('a');
+    var menuLinks = menu.getElementsByTagName('a'),
+        lanBtn = language.getElementsByTagName('span')[0],
+        lanList = language.getElementsByTagName('div')[0];//alert(lanBtn);
+
 
     function opClass(element, className, operation) {
         var classes = element.className.split(/\s+/),
@@ -57,5 +61,12 @@
         }
 
     };
+
+    lanBtn.onclick = function () {
+        if (!lanList.style.display|lanList.style.display==='none') lanList.style.display = 'block';
+        else lanList.style.display = 'none';
+    }
+    language.onmouseenter = function () {lanList.style.display = 'block';}
+    language.onmouseleave = function () {lanList.style.display = 'none';}
 
 }(this, this.document));
